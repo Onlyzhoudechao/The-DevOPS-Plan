@@ -1,6 +1,6 @@
 # 工具链搭建（一） #
 ## 安装CentOS 6.9 minimal 后的基本配置 ##
-1. root登陆后添加新用户
+### 1. root登陆后添加新用户 ###
 ```
 [root@master ~]# useradd vincent //添加新用户vincent
 [root@master ~]# passwd vincent //设置vincent密码
@@ -11,7 +11,7 @@
 >保存并退出
 >然后终端输入exit退出登陆，改用用户vincent登陆
 
-2. 网络配置，设置固定ip
+### 2. 网络配置，设置固定ip ###
 默认情况下时上不了网的，因为还没有配置网络。
 ```
 [vincent@master ~]$ sudo vi /etc/sysconfig/network-scripts/ifcfg-eth0
@@ -27,7 +27,8 @@
 重启成功效果如下图  
 ![](pic/configure-os/network-service-restart.png)
 
-3. 配置阿里源
+
+### 3. 配置阿里源 ###
 首先备份repo文件
 ```
 [vincent@master ~]$ sudo mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
@@ -46,7 +47,7 @@
 ```
 [vincent@master ~]$ sudo yum -y update
 ```
-3. 安装JDK8  
+### 4. 安装JDK8  ###
 使用官方的rpm安装方式方便快捷且易于维护  
 首先下载JDK
 ```
@@ -74,7 +75,7 @@
 
 >使用这种方法安装的好处是当有多个java版本时可以很方便地选取我们需要的版本。
 
-4. SSH基本配置
+### 5. SSH基本配置 ###
 生成ssh私钥和公钥  
 ```
 [vincent@master ~]$ ssh-keygen -t rsa
@@ -83,7 +84,7 @@
 相关文件生成在.ssh中  
 >两台电脑免密登陆方法：[ssh免密码登录配置方法，（图示加命令）](http://blog.csdn.net/universe_hao/article/details/52296811)
 
-5. 安装MySql
+### 6. 安装MySql  ###
 首先从官网下载rpm包
 ```
 [vincent@master ~]$ wget https://repo.mysql.com//mysql57-community-release-el6-11.noarch.rpm
