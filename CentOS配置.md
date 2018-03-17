@@ -81,4 +81,4 @@
 ```
 ![](pic/configure-os/ssh-keygen.png)  
 相关文件生成在.ssh中  
->两台电脑免密登陆方法：[两台linux机器相互认证](http://blog.csdn.net/xiaoyida11/article/details/51557174)
+>两台电脑免密登陆方法：[ssh免密码登录配置方法，（图示加命令）](http://blog.csdn.net/universe_hao/article/details/52296811)
