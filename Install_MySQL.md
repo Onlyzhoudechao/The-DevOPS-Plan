@@ -61,3 +61,5 @@ mysql_secure_install一些安全配置。
 [vincent@master ~]$ sudo mysql_secure_installation
 ```
 按照需求来，建议禁止MySQL远程root用户登陆。
+### mysql字符集的配置 ###
+![](pic/mysql-set/mysql字符集.png)
