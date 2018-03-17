@@ -28,7 +28,7 @@
 ```
 [vincent@master ~]$ ./sonarqube/bin/linux-x86-64/sonar.sh start
 ```
-4. 开启9000端口
+4. 开启9000端口  
 注意要开启SonarQube的运行端口9000
 >```
 >[vincent@master ~]$ iptables -A INPUT -p tcp --dport 8000 -j ACCEPT
