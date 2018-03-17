@@ -83,3 +83,28 @@
 ![](pic/configure-os/ssh-keygen.png)  
 相关文件生成在.ssh中  
 >两台电脑免密登陆方法：[ssh免密码登录配置方法，（图示加命令）](http://blog.csdn.net/universe_hao/article/details/52296811)
+
+### 6.开放端口 ###
+CentOS 6使用iptables管理端口  
+开放端口的方法有很多，下面以开放8080端口为例
+>1. 直接修改 /etc/sysconfig/iptables
+```
+[vincent@master ~]$ sudo vi /etc/sysconfig/iptables
+```
+>![](pic/configure-os/sysconfig-iptables.png)  
+>可以直接参照默认开启的22号端口的写法，开放8080端口  
+>:wq保存退出后重启防火墙
+>```
+>[vincent@master ~]$ sudo service iptables restart
+>```
+
+>2. 直接使用iptables命令（推荐）
+>```
+>[vincent@master ~]$ iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
+>```
+>然后保存并重启
+>```
+>[vincent@master ~]$ sudo service iptables save && sudo service iptables restart
+>```
+
+更多可参照[iptables的详细用法](http://blog.csdn.net/yejinxiong001/article/details/53610028)

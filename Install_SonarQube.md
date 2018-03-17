@@ -30,3 +30,10 @@
 ```
 4. 开启9000端口
 注意要开启SonarQube的运行端口9000
+>```
+>[vincent@master ~]$ iptables -A INPUT -p tcp --dport 8000 -j ACCEPT
+>```
+>然后保存并重启
+>```
+>[vincent@master ~]$ sudo service iptables save && sudo service iptables restart
+>```
