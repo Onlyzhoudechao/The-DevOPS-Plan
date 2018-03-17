@@ -139,4 +139,10 @@ mysql> create user 'test'@'%' identified by '123456Asd!';
 mysql> flush privileges;
 
 ```
-输入exit退出MySQL shell。
+输入exit退出MySQL shell。 
+
+mysql_secure_install一些安全配置。  
+```
+[vincent@master ~]$ sudo mysql_secure_installation
+```
+按照需求来，建议禁止MySQL远程root用户登陆。
