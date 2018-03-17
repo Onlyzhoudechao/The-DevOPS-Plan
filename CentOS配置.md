@@ -46,7 +46,7 @@
 ```
 [vincent@master ~]$ sudo yum -y update
 ```
-3. 安装JDK8
+3. 安装JDK8  
 使用官方的rpm安装方式方便快捷且易于维护  
 首先下载JDK
 ```
