@@ -74,3 +74,11 @@
 
 >使用这种方法安装的好处是当有多个java版本时可以很方便地选取我们需要的版本。
 
+4. SSH基本配置
+生成ssh私钥和公钥  
+```
+[vincent@master ~]$ ssh-keygen -t rsa
+```
+![](pic/configure-os/ssh-keygen.png)  
+相关文件生成在.ssh中  
+>两台电脑免密登陆方法：[两台linux机器相互认证](http://blog.csdn.net/xiaoyida11/article/details/51557174)
