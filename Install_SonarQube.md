@@ -10,7 +10,23 @@
 ```
 [vincent@master ~]$ sudo yum install -y unzip
 ```
-使用unzip解压.zip文件，解压到/opt/下
+使用unzip解压.zip文件，并重命名
 ```
-[vincent@master ~]$ sudo unzip sonarqube-6.7.2.zip -d /opt/
+[vincent@master ~]$ unzip sonarqube-6.7.2.zip 
+[vincent@master ~]$ mv sonarqube-6.7.2 sonarqube
 ```
+<!-- 3. 更改sonarqube文件权限和所属用户组
+```
+[vincent@master ~]$ cd /opt/
+[vincent@master opt]$ sudo chown -R vincent:vincent sonarqube-6.7.2
+``` -->
+3. 启动SonarQube
+```
+[vincent@master ~]$ ./sonarqube/bin/linux-x86-64/sonar.sh console
+```
+或
+```
+[vincent@master ~]$ ./sonarqube/bin/linux-x86-64/sonar.sh start
+```
+4. 开启9000端口
+注意要开启SonarQube的运行端口9000
