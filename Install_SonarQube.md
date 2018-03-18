@@ -58,7 +58,7 @@ sonar.jdbc.password=123456Asd!
 sonar.jdbc.url=jdbc:mysql://localhost:3306/sonarqube_test?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance&useSSL=false
 ```
 ![](pic/install-sonarqube/sonarqube-properties.png)
-分别是MySQL的用户名(sonarqube)，密码(123456Asd!)以及数据库(sonarqube_test)。配置文件中很多东西只要把作为注释的“#”去掉并稍作修改即可。还可以配置很多其他的，比如说运行的端口。[详情见参考](https://devopscube.com/setup-and-configure-sonarqube-on-linux/)
+分别是MySQL的用户名(sonarqube)，密码(123456Asd!)以及数据库(sonarqube_test)。配置文件中很多东西只要把作为注释的“#”去掉并稍作修改即可。还可以配置很多其他的，比如说运行的端口。[详情见参考](https://devopscube.com/setup-and-configure-sonarqube-on-linux/)  
 7. 重启SonarQube
 ```
 [vincent@master ~]$ ./sonarqube/bin/linux-x86-64/sonar.sh restart
