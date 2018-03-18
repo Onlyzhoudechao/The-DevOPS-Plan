@@ -106,7 +106,7 @@ CentOS 6使用iptables管理端口
 >[vincent@master ~]$ sudo service iptables restart
 >```
 
->2. 直接使用iptables命令（推荐）
+>2. 直接使用iptables命令（经验证会失效？？）
 >```
 >[vincent@master ~]$ iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
 >```
