@@ -31,14 +31,14 @@ chmod -R 700 /home/confluence/confluence-home
 ```
 confluence.home=/home/confluence/confluence-home
 ```
-6.检查端口是否被占用，confluence默认运行的端口有8000和8090， Change the Server port (8000) and the Connector port (8090)，如果被占用，可打开/opt/confluence/conf/server.xml文件修改端口，如果防火墙打开，则放行修改后的端口，下面的例子是修改成Server port to 5000 and the Connector port to 5050
+6.检查端口是否被占用，confluence默认运行的端口有8000和8090， Change the Server port (8000) and the Connector port (8090)，如果被占用，可打开/opt/confluence/conf/server.xml文件修改端口，如果防火墙打开，则放行修改后的端口，下面的例子是修改成Server port to 6006 and the Connector port to 6060
 ```
-Server port="5000" shutdown="SHUTDOWN" debug="0">
-<Service name="Tomcat-Standalone">
-<Connector port="5050" connectionTimeout="20000" redirectPort="8443"
-maxThreads="48" minSpareThreads="10"
-enableLookups="false" acceptCount="10" debug="0" URIEncoding="UTF-8"
-protocol="org.apache.coyote.http11.Http11NioProtocol" />
+<Server port="6006" shutdown="SHUTDOWN" debug="0">
+    <Service name="Tomcat-Standalone">
+        <Connector port="6060" connectionTimeout="20000" redirectPort="8443"
+                maxThreads="48" minSpareThreads="10"
+                enableLookups="false" acceptCount="10" debug="0" URIEncoding="UTF-8"
+                protocol="org.apache.coyote.http11.Http11NioProtocol" />
 ```
 7.下载mysql数据库连接confluence包并拷贝到jira的lib目录下
 ```
@@ -48,7 +48,26 @@ tar zxvf mysql-connector-java-5.1.45.tar.gz
 cd mysql-connector-java-5.1.45
 \cp mysql-connector-java-5.1.45-bin.jar /opt/confluence/confluence/WEB-INF/lib/
 ```
-8.可以切换到confluence用户并启动jira工程，检查8090端口。并将启动命令加入到/etc/rc.local文件中
+8.可以切换到confluence用户并启动jira工程，检查6060端口。并将启动命令加入到/etc/rc.local文件中
 ```
+[root@master ~]# /bin/sh /opt/confluence/bin/start-confluence.sh
 
+To run Confluence in the foreground, start the server with start-confluence.sh -fg
+executing as current user
+If you encounter issues starting up Confluence, please see the Installation guide at http://confluence.atlassian.com/display/DOC/Confluence+Installation+Guide
+
+Server startup logs are located in /opt/confluence/logs/catalina.out
+---------------------------------------------------------------------------
+Using Java: /usr/bin/java
+2018-03-19 00:23:55,184 INFO [main] [atlassian.confluence.bootstrap.SynchronyProxyWatchdog] A Context element for ${confluence.context.path}/synchrony-proxy is found in /opt/confluence/conf/server.xml. No further action is required
+---------------------------------------------------------------------------
+Using CATALINA_BASE:   /opt/confluence
+Using CATALINA_HOME:   /opt/confluence
+Using CATALINA_TMPDIR: /opt/confluence/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /opt/confluence/bin/bootstrap.jar:/opt/confluence/bin/tomcat-juli.jar
+Using CATALINA_PID:    /opt/confluence/work/catalina.pid
+Tomcat started.
 ```
+以上的过程来自于[点击查看]http://blog.51cto.com/net881004/2054131()
+
