@@ -37,9 +37,34 @@ java -jar /usr/lib/jenkis/jenkins.war  --httpPort='端口号'
 
 这里还要注意的是centos必须对外开放一些端口，否则远程访问不到，以下是开放端口的语句
 ```
+直接修改配置文件的方法如下：
+sudo vi /etc/sysconfig/iptables
+
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 9550 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 8080 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 5050 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 5005 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 8070 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 8090 -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 6006 -j ACCEPT
+
+sudo service iptables restart
+
+第二种方式用语句来修改
 iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
 然后保存并重新启动
 sudo service iptables save && sudo service iptables restart
 再通过查看哪些端口已经对外开放
 /etc/init.d/iptables status
 ```
+
+
+在浏览器输入  http://192.168.222.151:9550 来访问如下图所示：
+![](pic/install-jenkins/login.PNG)
+
+输入密码点击登录以后

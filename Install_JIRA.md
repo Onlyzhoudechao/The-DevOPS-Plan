@@ -63,9 +63,48 @@ cd mysql-connector-java-5.7.21
 \cp mysql-connector-java-5.7.21-bin.jar /opt/jira/lib/
 ```
 10.可以切换到jira帐号下启动jira并查看8080端口，可以将启动命令放在/etc/rc.local文件中
+```
+[root@master zhoudechao]# /bin/sh /opt/jira/bin/start-jira.sh
 
-![](pic/install-jira/jira.PNG)
+To run JIRA in the foreground, start the server with start-jira.sh -fg
+executing as current user
+                .....
+          .... .NMMMD.  ...
+        .8MMM.  $MMN,..~MMMO.
+        .?MMM.         .MMM?.
 
+     OMMMMZ.           .,NMMMN~
+     .IMMMMMM. .NMMMN. .MMMMMN,
+       ,MMMMMM$..3MD..ZMMMMMM.
+        =NMMMMMM,. .,MMMMMMD.
+         .MMMMMMMM8MMMMMMM,
+           .ONMMMMMMMMMMZ.
+             ,NMMMMMMM8.
+            .:,.$MMMMMMM
+          .IMMMM..NMMMMMD.
+         .8MMMMM:  :NMMMMN.
+         .MMMMMM.   .MMMMM~.
+         .MMMMMN    .MMMMM?.
+
+      Atlassian JIRA
+      Version : 7.6.0
+                  
+
+If you encounter issues starting or stopping JIRA, please see the Troubleshooting guide at http://confluence.atlassian.com/display/JIRA/Installation+Troubleshooting+Guide
+
+Using JIRA_HOME:       /home/jira/jirasoftware-home
+
+Server startup logs are located in /opt/jira/logs/catalina.out
+Using CATALINA_BASE:   /opt/jira
+Using CATALINA_HOME:   /opt/jira
+Using CATALINA_TMPDIR: /opt/jira/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /opt/jira/bin/bootstrap.jar:/opt/jira/bin/tomcat-juli.jar
+Using CATALINA_PID:    /opt/jira/work/catalina.pid
+Existing PID file found during start.
+Removing/clearing stale PID file.
+Tomcat started.
+```
 
 11.在浏览器输入 192.168.222.151：5050
 ![](pic/install-jira/jira2.PNG)

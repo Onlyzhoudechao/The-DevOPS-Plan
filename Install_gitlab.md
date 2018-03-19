@@ -68,17 +68,17 @@ gitlab-ctl restart/stop/start
 ```
 vim /etc/gitlab/gitlab.rb
 
-#unicorn['port'] = 8080 修改 8070  默认是注释的去掉前面的#
-unicorn['port'] = 8070
-#nginx['listen_port'] = nil 修改 8090  默认是注释的去掉前面的#
-nginx['listen_port'] = 8090
+#unicorn['port'] = 8080 修改 8010  默认是注释的去掉前面的#
+unicorn['port'] = 8010
+#nginx['listen_port'] = nil 修改 8020  默认是注释的去掉前面的#
+nginx['listen_port'] = 8020
 ```
 2.修改/var/opt/gitlab/gitlab-rails/etc/unicorn.rb
 ```
 vim /var/opt/gitlab/gitlab-rails/etc/unicorn.rb
 
 #listen "127.0.0.1:8080", :tcp_nopush => true
-listen "127.0.0.1:8070", :tcp_nopush => true
+listen "127.0.0.1:8010", :tcp_nopush => true
 ```
 
 3.修改默认的gitlab nginx的web服务80端 /var/opt/gitlab/nginx/conf/gitlab-http.conf
@@ -86,7 +86,7 @@ listen "127.0.0.1:8070", :tcp_nopush => true
 vim /var/opt/gitlab/nginx/conf/gitlab-http.conf
 
 #listen *:80;
-listen *:8090;
+listen *:8020;
 ```
 4.重新配置gitlab
 ```

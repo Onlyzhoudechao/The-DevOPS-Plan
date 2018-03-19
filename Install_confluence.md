@@ -31,11 +31,11 @@ chmod -R 700 /home/confluence/confluence-home
 ```
 confluence.home=/home/confluence/confluence-home
 ```
-6.检查端口是否被占用，confluence默认运行的端口有8000和8090， Change the Server port (8000) and the Connector port (8090)，如果被占用，可打开/opt/confluence/conf/server.xml文件修改端口，如果防火墙打开，则放行修改后的端口，下面的例子是修改成Server port to 6006 and the Connector port to 6060
+6.检查端口是否被占用，confluence默认运行的端口有8000和8090， Change the Server port (8000) and the Connector port (8090)，如果被占用，可打开/opt/confluence/conf/server.xml文件修改端口，如果防火墙打开，则放行修改后的端口，下面的例子是修改成Server port to 7000 and the Connector port to 7070
 ```
-<Server port="6006" shutdown="SHUTDOWN" debug="0">
+<Server port="7000" shutdown="SHUTDOWN" debug="0">
     <Service name="Tomcat-Standalone">
-        <Connector port="6060" connectionTimeout="20000" redirectPort="8443"
+        <Connector port="7070" connectionTimeout="20000" redirectPort="8443"
                 maxThreads="48" minSpareThreads="10"
                 enableLookups="false" acceptCount="10" debug="0" URIEncoding="UTF-8"
                 protocol="org.apache.coyote.http11.Http11NioProtocol" />
