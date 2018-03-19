@@ -29,17 +29,25 @@
 
 
 ### 3. 配置阿里源 ###
-首先备份repo文件
+包括官方源和epel源  
+安装epel源
+```
+[vincent@master ~]$ sudo yum install epel-release
+```
+备份repo文件
 ```
 [vincent@master ~]$ sudo mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+[vincent@master ~]$ sudo mv /etc/yum.repos.d/epel.repo /etc/yum.repos.d/epel.repo.backup
+[vincent@master ~]$ sudo mv /etc/yum.repos.d/epel-testing.repo /etc/yum.repos.d/epel-testing.repo.backup
 ```
 然后下载并替换repo配置文件
 ```
 [vincent@master ~]$ sudo curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
+[vincent@master ~]$ sudo curl -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-6.repo
 ```
 生成缓存
 ```
-[vincent@master ~]$ yum makecache
+[vincent@master ~]$ sudo yum clean all && yum makecache
 ```
 效果如下  
 ![](pic/configure-os/yum-makecache.png)  
@@ -98,7 +106,7 @@ CentOS 6使用iptables管理端口
 >[vincent@master ~]$ sudo service iptables restart
 >```
 
->2. 直接使用iptables命令（推荐）
+>2. 直接使用iptables命令（经验证会失效？？）
 >```
 >[vincent@master ~]$ iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
 >```
