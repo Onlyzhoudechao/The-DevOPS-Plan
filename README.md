@@ -12,7 +12,7 @@
 |                       |Nexus      |y              |y          |CentNexus  |           |
 |Continuous Integration |SonarQube  |y              |y          |CentCI     |           |
 |                       |Junit      |               |y          |CentDev    |           |
-|                       |Tricentis  |               |           |           |           |
+|                       |Tricentis  |y              |y          |           |           |
 |Continuous delivery/deployment|Ansible|y           |y          |CentCD     |           |
 |                       |Flyaway    |               |y          |CentDev    |           |
 ## 目录 ##
