@@ -1,6 +1,17 @@
 # The DevOPS Plan #
 ## 前言 ##
 工具链  
+<table border="1">
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+</table>
+
 |Type                   |Tool name  |Servers side   |Client side|VM name    |Dependence |
 |:-:                    |:-:        |:-:            |:-:        |:-:        |:-:        |
 |Planning Tools         |Jira       |y              |y          |CentPlan   |           |
@@ -12,7 +23,7 @@
 |                       |Nexus      |y              |y          |CentNexus  |           |
 |Continuous Integration |SonarQube  |y              |y          |CentCI     |           |
 |                       |Junit      |               |y          |CentDev    |           |
-|                       |Tricentis  |y              |y          |           |           |
+|                       |Tricentis  |y              |y           |           |           |
 |Continuous delivery/deployment|Ansible|y           |y          |CentCD     |           |
 |                       |Flyaway    |               |y          |CentDev    |           |
 ## 目录 ##
