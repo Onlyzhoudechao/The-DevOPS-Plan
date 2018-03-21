@@ -9,5 +9,14 @@ wget http://mirror.bit.edu.cn/apache/tomcat/tomcat-7/v7.0.85/bin/apache-tomcat-7
 
 2.解压tomcat到指定目录
 ```
-tar zxvf 
+tar zxvf apache-tomcat-7.0.85.tar.gz -C /usr/local
 ```
+
+3.打开tomcat的解压目录，进入到conf目录中，修改server.xml这个配置文件，把<connector port="8080"/>改为8090，并且修改
+ <!-- Define an AJP 1.3 Connector on port 8009 -->
+    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />  中的端口号为8012
+
+4.进入tomcat的bin目录下，通过 ./startup.sh来启动tomcat。
+
+5.在浏览器中输入http:40.125.215.65:8090来访问tomcat访问器。
+

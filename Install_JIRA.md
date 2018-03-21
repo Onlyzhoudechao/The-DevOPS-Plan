@@ -60,7 +60,7 @@ wget -c -P /tmp wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-conne
 cd /tmp
 tar zxvf mysql-connector-java-5.1.45.tar.gz
 cd mysql-connector-java-5.1.45
-\cp mysql-connector-java-5.1.45-bin.jar /opt/jira/lib/
+cp mysql-connector-java-5.1.45-bin.jar /opt/jira/lib/
 ```
 10.可以切换到jira帐号下启动jira并查看8080端口，可以将启动命令放在/etc/rc.local文件中
 ```
