@@ -67,4 +67,17 @@ sudo service iptables save && sudo service iptables restart
 在浏览器输入  http://192.168.222.151:9550 来访问如下图所示：
 ![](pic/install-jenkins/login.PNG)
 
-输入密码点击登录以后
+输入密码点击登录以后进行相关配置。
+
+## 运行Gitlab上的一Maven个实例 ##
+安装好gitlab相关插件之后，要先进行一些简单的配置。注意以下几点。
+1. Manage Jenkins -> Configure System中Gitlab项目下“Enable authentication for '/project' end-point”选项框关闭（uncheck）
+2. Jenkins的Maven工程“构建触发器（Buid Triggers）”如下
+![](pic/install-jenkins/build-triggers.png)  
+记下URL: http://40.125.215.65:8080/project/test  
+3. 在gitlab下，进入“你的工程 -> settings -> integrations”，输入上面的URL。如下图所示。
+![](pic/install-jenkins/gitlab-integrations.png)  
+可以点击下方的“Test”按钮选择“push events”进行webhook测试。
+
+注意以上三点，实现maven工程在每次push之后的自动部署。
+
