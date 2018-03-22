@@ -67,9 +67,11 @@ cp mysql-connector-java-5.1.45-bin.jar /home/devopsbba1/atlassian/bitbucket/4.10
 mysql -uroot -p
 
 mysql> CREATE DATABASE bitbucket CHARACTER SET utf8 COLLATE utf8_bin;
-mysql> GRANT ALL PRIVILEGES ON bitbucket.* TO 'bitbucketuser'@'%' IDENTIFIED BY '123456Asd!';
+mysql> GRANT ALL PRIVILEGES ON bitbucket.* TO 'bitbucketuser'@'localhost' IDENTIFIED BY '123456Asd!';
 mysql> FLUSH PRIVILEGES;
 mysql> QUIT
+
+特别注意：如果你的bitbucket服务器与mysql的服务器不在同一个，则需要把上面的localhost改为bitbucket所在的ip地址。
 ```
 重启bitbucket
 ```
@@ -77,7 +79,12 @@ mysql> QUIT
  ./startup.sh
 ```
 六.重新进入bitbucket
+![](pic/install-bitbucket/4.PNG)
 
+![](pic/install-bitbucket/5.PNG)
 
+![](pic/install-bitbucket/6.PNG)
+![](pic/install-bitbucket/7.PNG)
+![](pic/install-bitbucket/8.PNG)
 以上bitbucket安装过程参考[点击查看](http://www.bubuko.com/infodetail-1825280.html)
 git的升级过程参考[点击查看](http://blog.sina.com.cn/s/blog_3fe961ae0102w9ui.html)
