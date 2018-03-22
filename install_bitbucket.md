@@ -88,3 +88,5 @@ mysql> QUIT
 ![](pic/install-bitbucket/8.PNG)
 以上bitbucket安装过程参考[点击查看](http://www.bubuko.com/infodetail-1825280.html)
 git的升级过程参考[点击查看](http://blog.sina.com.cn/s/blog_3fe961ae0102w9ui.html)
+
+mysql数据库的配置信息参考[点击查看](https://confluence.atlassian.com/bitbucketserver/connecting-bitbucket-server-to-mysql-776640382.html)
