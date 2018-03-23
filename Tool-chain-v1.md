@@ -92,12 +92,12 @@ sudo chown -R jenkins:jenkins maven
 ```
 
 
-安装git
+6. 安装git
 ```
 sudo yum -y install git
 ```
 
-安装ansible
+7. 安装ansible
 ```
 sudo yum -y install epel-release
 
@@ -107,7 +107,7 @@ sudo yum -y install ansible
 ```
 
 
-6. 安装gitlab社区版
+8. 安装gitlab社区版
 >默认端口80  
 >默认用户root
 ```
@@ -138,7 +138,7 @@ gitlab-ctl reconfigure
 /etc/gitlab/gitlab.rb
 ```
 
-7. 安装Nexus  
+9. 安装Nexus  
 >默认端口8081  
 >默认用户名 admin 密码 admin123
 ```
