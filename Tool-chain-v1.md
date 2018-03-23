@@ -1,5 +1,5 @@
 ## Tool chain v1 ##
-安装java
+1. 安装java
 ```
 wget --no-cookie --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.rpm
 
@@ -10,7 +10,7 @@ sudo alternatives --config java
 sudo alternatives --config javac
 ```
 
-安装Jenkins
+2. 安装Jenkins
 ```
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 
@@ -22,7 +22,9 @@ sudo service jenkins start
 或
 sudo java -jar /usr/lib/jenkins/jenkins.war
 ```
-安装mysql
+
+
+3. 安装mysql
 ```
 wget https://repo.mysql.com//mysql57-community-release-el6-11.noarch.rpm
 
@@ -44,7 +46,11 @@ mysql> create user 'test'@'%' identified by '123456Asd!';   //添加新用户
 
 mysql> flush privileges;    //刷新权限
 ```
-安装sonarqube
+
+
+4. 安装sonarqube
+>默认用户admin
+>默认密码admin
 ```
 wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.7.2.zip
 
@@ -69,7 +75,8 @@ sonar.jdbc.url=jdbc:mysql://localhost:3306/sonarqube_test?useUnicode=true&charac
 
 ```
 
-下载maven
+
+5. 下载maven
 
 ```
 cd /usr/local
@@ -98,3 +105,47 @@ yum makecache
 
 sudo yum -y install ansible
 ```
+
+
+6. 安装gitlab社区版
+>默认端口80  
+>默认用户root
+```
+前期准备
+sudo yum install -y curl policycoreutils-python openssh-server cronie
+sudo lokkit -s http -s ssh
+
+sudo yum install postfix
+sudo service postfix start
+sudo chkconfig postfix on
+
+新建 /etc/yum.repos.d/gitlab-ce.repo，内容为
+[gitlab-ce]
+name=Gitlab CE Repository
+baseurl=https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el$releasever/
+gpgcheck=0
+enabled=1
+
+再执行
+sudo yum makecache
+sudo yum install gitlab-ce
+
+gitlab初始化
+gitlab-ctl reconfigure
+
+
+配置文件目录
+/etc/gitlab/gitlab.rb
+```
+
+7. 安装Nexus  
+>默认端口8081  
+>默认用户名 admin 密码 admin123
+```
+wget https://sonatype-download.global.ssl.fastly.net/repository/repositoryManager/3/nexus-3.9.0-01-unix.tar.gz
+tar xvf nexus-3.9.0-01-unix.tar.gz
+mv nexus-3.9.0-01 nexus
+./nexus/bin/nexus start  //选项： {start|stop|run|run-redirect|status|restart|force-reload}
+```
+
+## Tool chain配置 ##
