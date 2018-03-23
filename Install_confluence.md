@@ -40,15 +40,15 @@ confluence.home=/home/confluence/confluence-home
                 enableLookups="false" acceptCount="10" debug="0" URIEncoding="UTF-8"
                 protocol="org.apache.coyote.http11.Http11NioProtocol" />
 ```
-7.下载mysql数据库连接confluence包并拷贝到jira的lib目录下
+7.下载mysql数据库连接confluence包并拷贝到confluence的lib目录下
 ```
 wget -c -P /tmp wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.45.tar.gz
 cd /tmp
 tar zxvf mysql-connector-java-5.1.45.tar.gz
 cd mysql-connector-java-5.1.45
-\cp mysql-connector-java-5.1.45-bin.jar /opt/confluence/confluence/WEB-INF/lib/
+cp mysql-connector-java-5.1.45-bin.jar /opt/confluence/confluence/WEB-INF/lib/
 ```
-8.可以切换到confluence用户并启动jira工程，检查6060端口。并将启动命令加入到/etc/rc.local文件中
+8.可以切换到confluence用户并启动confluence工程，检查7070端口。启动
 ```
 [root@master ~]# /bin/sh /opt/confluence/bin/start-confluence.sh
 
@@ -69,5 +69,5 @@ Using CLASSPATH:       /opt/confluence/bin/bootstrap.jar:/opt/confluence/bin/tom
 Using CATALINA_PID:    /opt/confluence/work/catalina.pid
 Tomcat started.
 ```
-以上的过程来自于[点击查看]http://blog.51cto.com/net881004/2054131()
+以上的过程来自于[点击查看](http://blog.51cto.com/net881004/2054131)
 
