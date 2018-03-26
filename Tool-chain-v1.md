@@ -157,4 +157,3 @@ sudo ./atlassian-jira-software-7.8.1-x64.bin
 接下来进行软件安装
 注意查看说明，尤其是端口配置
 ```
-## Tool chain配置 ##
