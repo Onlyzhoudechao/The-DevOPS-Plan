@@ -59,7 +59,7 @@ sudo wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5
 tar zxvf mysql-connector-java-5.1.45.tar.gz
 
 cd mysql-connector-java-5.1.45
-cp mysql-connector-java-5.1.45-bin.jar /home/devopsbba1/atlassian/bitbucket/4.10.1/
+cp mysql-connector-java-5.1.45-bin.jar /home/devopsbba1/atlassian/bitbucket/4.10.1/lib/
 
 ```
 五.接下来在mysql上创建bitbucket数据库和账户。
