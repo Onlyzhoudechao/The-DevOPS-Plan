@@ -32,6 +32,8 @@ sudo yum localinstall mysql57-community-release-el6-11.noarch.rpm
 
 yum makecache
 
+sudo yum -y install mysql mysql-server
+
 sudo service mysqld start
 
 sudo chkconfig mysqld on
@@ -147,5 +149,12 @@ tar xvf nexus-3.9.0-01-unix.tar.gz
 mv nexus-3.9.0-01 nexus
 ./nexus/bin/nexus start  //选项： {start|stop|run|run-redirect|status|restart|force-reload}
 ```
-
+10. 安装JIRA
+```
+wget https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-7.8.1-x64.bin
+chmod a+x atlassian-jira-software-7.8.1-x64.bin
+sudo ./atlassian-jira-software-7.8.1-x64.bin
+接下来进行软件安装
+注意查看说明，尤其是端口配置
+```
 ## Tool chain配置 ##
