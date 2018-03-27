@@ -20,7 +20,7 @@
 ## Jenkins与Jira集成  ##
 在Jira端，将相应的工程的checkbox框打上。
 ![](pic/Jenkins-integrate-with-jira/jira-checkbox.png)  
-点击左上角“项目”->“创建项目”,项目创建过程中会生成一个JIRA KEY。  
+点击左上角“项目”->“创建项目”,项目创建过程中会生成一个JIRA KEY。在Jira中创建一个issue。
 ![](pic/Jenkins-integrate-with-jira/jira-key.png)  
 >1. Jenkins中Maven项目的配置，在“构建后操作”中添加“JIRA:Create issue”。注意“Jira Project Key”要用自己上面生成的(不是JIR2)。  
 >    ![](pic/Jenkins-integrate-with-jira/jira-create-issue.png)  
