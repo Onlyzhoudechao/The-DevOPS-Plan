@@ -4,12 +4,12 @@
 ```
   <servers>
 	<server>
-        <id>nexus</id>
+        <id>maven-releases</id>
         <username>admin</username>
         <password>admin123</password>
         </server>
         <server>
-        <id>nexus-snapshot</id>
+        <id>maven-snapshots</id>
         <username>admin</username>
         <password>admin123</password>
     </server>
