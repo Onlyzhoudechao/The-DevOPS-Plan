@@ -5,6 +5,8 @@
 [root@master ~]# useradd vincent //添加新用户vincent
 [root@master ~]# passwd vincent //设置vincent密码
 [root@master ~]# visudo //将vincent添加到sudors
+
+如果要设置sudo免密码，格式如下： 用户名 ALL=(ALL)  NOPASSWD:  ALL
 ```
 >visudo中更改如下图  
 >![](pic/configure-os/visudo.png)  
@@ -18,7 +20,7 @@
 ```
 >将ifcfg-eth0更改为  
 ![](pic/configure-os/modified-ifcfg-eth0.png)  
->其中关键是设置IPADDR、GATEWAY、PREFIX、DNS1、DNS2，另外将ONBOOT设置为yes可以自启动，BOOTPROTO设为none不用dhcp来自动获取ip
+>其中关键是设置IPADDR、GATEWAY、PREFIX、DNS1、DNS2，另外将ONBOOT设置为yes可以自启动，BOOTPROTO设为static不用dhcp来自动获取ip
 
 然后重启network服务
 ```
@@ -42,8 +44,7 @@
 ```
 然后下载并替换repo配置文件
 ```
-[vincent@master ~]$ sudo curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
-[vincent@master ~]$ sudo curl -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-6.repo
+[vincent@master ~]$ sudo wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-6.repo
 ```
 生成缓存
 ```
@@ -114,5 +115,23 @@ CentOS 6使用iptables管理端口
 >```
 >[vincent@master ~]$ sudo service iptables save && sudo service iptables restart
 >```
+
+### 7.关闭防火墙和selinux ###
+
+（1）永久关闭SELinux  
+修改配置文件  
+```
+# vi /etc/selinux/config
+```
+将SELINUX=enforcing改为SELINUX=disabled  
+需要重启机器生效！！  
+
+（2）关闭防火墙
+```
+
+开启： chkconfig iptables on
+
+关闭： chkconfig iptables off
+```
 
 更多可参照[iptables的详细用法](http://blog.csdn.net/yejinxiong001/article/details/53610028)
