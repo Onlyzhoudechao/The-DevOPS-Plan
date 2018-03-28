@@ -116,4 +116,22 @@ CentOS 6使用iptables管理端口
 >[vincent@master ~]$ sudo service iptables save && sudo service iptables restart
 >```
 
+### 7.关闭防火墙和selinux ###
+
+（1）永久关闭SELinux  
+修改配置文件  
+```
+# vi /etc/selinux/config
+```
+将SELINUX=enforcing改为SELINUX=disabled  
+需要重启机器生效！！  
+
+（2）关闭防火墙
+```
+
+开启： chkconfig iptables on
+
+关闭： chkconfig iptables off
+```
+
 更多可参照[iptables的详细用法](http://blog.csdn.net/yejinxiong001/article/details/53610028)
