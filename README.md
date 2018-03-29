@@ -31,7 +31,8 @@
 [6.安装nexus](Install_nexus.md)  
 [7.安装maven](install_maven.md)  
 [8.安装tomcat](install_tomcat.md)  
-[9.Jenkins与Jira集成](Jenkins_integrate_with_Jira.md)  
+[9.安装ansible](Install_ansible.md)  
+[10.Jenkins与Jira集成](Jenkins_integrate_with_Jira.md)  
 </br>
 </br>    
     
