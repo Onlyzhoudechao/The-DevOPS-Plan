@@ -46,4 +46,37 @@ ansible webservers -i hosts -u vince -m module yum -a "name=git state=present" -
 ### 2. Playbook ###
 Ansible的“剧本”，类似一个脚本，使用.yml文件。一个简单的playbook如下：  
 ```
+---
+- name: This is a play
+  hosts: webservers
+  remote_user: vince
+  sudo: yes
+  connection: ssh
+  vars:
+    http_port: 80
+    cache_dir: /opt/cache
+  tasks:
+    - name: create cache dir
+      file: path={{cache_dir}} state=directory
+    - name: install nginx
+      yum: name=httpd state=installed
+      when: ansible_os_family=="Red Hat"
 ```
+* **- name** 是一个项目或task的名字，在playbook运行时会显示出来。可以随便取。
+* **vars** 变量声明，比如cache_dir，在下面的task的{{cache_dir}}就是对应这个cache_dir的值
+* **file、yum** 两个module分别用来在目标服务器创建文件和使用yum。
+* **when** 条件，这里ansible_os_family=="Red Hat"意味着当目标节点的操作系统是Red Hat系（CentOS、Fedora等）时，运行这个task。
+
+playbook的使用方法是：
+```
+# ansible-playbook -i hosts site.yml
+```
+site.yml是当前路径下的playbook，-i指明使用的hosts是当前路径下的hosts。没有-i则默认使用/etc/ansible/hosts。
+
+### 3. Roles ###
+在playbook（剧本）下，不同的role（角色）各司其职，有着不同的功能。可能有些role用来初始化gitlab服务器，有些role用来创建数据库。  
+创建一个role的方法如下：
+```
+# ansible-galaxy init gitlab
+```
+就在当前路径下创建一个叫gitlab的角色。
