@@ -21,14 +21,18 @@
 </br>
 </br>
 
-
+********************************
 ## 目录 ##
 [1.CentOS配置](CentOS_configure.md)  
 [2.安装MySQL](Install_MySQL.md)  
 [3.安装SonarQube](Install_SonarQube.md)  
 [4.安装Bitbucket](Install_bitbucket.md)  
-[5.Jenkins与Jira集成](Jenkins_integrate_with_Jira.md)  
+[5.安装gitlab](Install_gitlab.md)  
+[6.安装nexus](Install_nexus.md)  
+[7.安装maven](install_maven.md)  
+[8.安装tomcat](install_tomcat.md)  
+[9.Jenkins与Jira集成](Jenkins_integrate_with_Jira.md)  
 </br>
 </br>    
     
-[!!最佳实践V1](Tool-chain-v1.md)
+[**最佳实践V1**](Tool-chain-v1.md)

@@ -43,6 +43,7 @@ ansible webservers -i hosts -u vince -m module yum -a "name=git state=present" -
 * **yum** 是yum模块，用于通过yum管理webservers的软件
 * **-a** 即args提供了yum模块使用的时候所需要的参数，分别是name和state
 * **-b** 即become
++ [ansible常用模块](https://www.cnblogs.com/ExzaiTin/p/7918415.html)
 ### 2. Playbook ###
 Ansible的“剧本”，类似一个脚本，使用.yml文件。一个简单的playbook如下：  
 ```
