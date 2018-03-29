@@ -80,4 +80,6 @@ site.yml是当前路径下的playbook，-i指明使用的hosts是当前路径下
 ```
 # ansible-galaxy init gitlab
 ```
-就在当前路径下创建一个叫gitlab的角色。
+就在当前路径下创建一个叫gitlab的角色。 
+
+***未完待续......***
