@@ -13,7 +13,6 @@ URL为bitbucket的仓库路径，Cresentials为bitbucket的用户名和密码
 四.在bitbucket下面下载插件
 
 找到下图黄色按钮，点击
-
 ![](pic/jenkins-bitbucket/4.PNG)
 下载插件
 ![](pic/jenkins-bitbucket/3.PNG)

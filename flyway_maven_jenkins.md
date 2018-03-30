@@ -26,6 +26,15 @@
   </plugins>
 </build>
 ```
+还要加上mysql 的驱动的依赖
+```
+<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.41</version>
+</dependency>
+```
 3.迁移数据库
 
 （1）建立一个 空 数据库用于测试。
@@ -70,3 +79,8 @@ validate：验证要执行的迁移脚本。
 baseline：为已经存在的数据库建立基线，迁移数据库将建立在基线的基础上。
 
 repair：修复 flyway_schema_histry 表。
+
+
+
+给数据库加上权限
+ GRANT ALL PRIVILEGES ON flyway.* TO 'test'@'%';

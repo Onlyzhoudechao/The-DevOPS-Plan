@@ -64,7 +64,7 @@ gitlab-ctl restart/stop/start
 
 特别注意：这里gitlab默认的访问端口为80，和nginx的默认访问端口冲突，因此需要修改一下gitlab的默认访问端口，修改步骤如下：
 
-1.修改/etc/gitlab/gitlab.rbz这个配置文件
+1.修改/etc/gitlab/gitlab.rb这个配置文件
 ```
 vim /etc/gitlab/gitlab.rb
 
