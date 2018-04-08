@@ -2,7 +2,7 @@
 
 ```
 /etc/nginx/nginx.conf    //这个是nginx的配置文件位置
-
+/etc/init.d/nginx start
 在http标签里面添加如下的内容：
 upstream tomcat_server1{
 	server 40.125.215.65:8090;       //tomcat的服务器和端口
@@ -18,7 +18,7 @@ server{
 }
 
 
-设置防火墙临时关闭
+设置selinux临时关闭
 setenforce 0
 
 临时打开SELinux 
