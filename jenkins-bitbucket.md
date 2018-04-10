@@ -4,22 +4,13 @@
 ### 二.选择git ###
 
 URL为bitbucket的仓库路径，Cresentials为bitbucket的用户名和密码  
-
+这个部分可能会出现jenkins连接不上bitbucket仓库，重新登录bitbucket就可以了
 ![](pic/jenkins-bitbucket/2.PNG)
 
 ### 三.勾选项配置如下：  ###
 ![](pic/jenkins-bitbucket/1.PNG)
-
-<<<<<<< HEAD
-四.在bitbucket下面下载插件
-
-找到下图黄色按钮，点击
-=======
 ### 四.在bitbucket下面下载插件   ###
-
-找到下图黄色按钮，点击   
- 
->>>>>>> b0639047e3afc0a41a1e28f3b78943fc1156585f
+找到下图黄色部分，点击   
 ![](pic/jenkins-bitbucket/4.PNG)
 下载插件            
 ![](pic/jenkins-bitbucket/3.PNG)

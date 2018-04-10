@@ -36,6 +36,7 @@ sudo yum -y install mysql mysql-server
 
 sudo service mysqld start
 
+//开机自启MySQL服务
 sudo chkconfig mysqld on
 
 sudo grep 'temporary password' /var/log/mysqld.log
@@ -133,7 +134,7 @@ sudo yum makecache
 sudo yum install gitlab-ce
 
 gitlab初始化
-gitlab-ctl reconfigure
+sudo gitlab-ctl reconfigure
 
 
 配置文件目录

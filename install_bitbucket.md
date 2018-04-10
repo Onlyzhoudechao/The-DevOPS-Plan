@@ -25,7 +25,7 @@ sudo yum install  gcc perl-ExtUtils-MakeMaker
 sudo yum remove git
 
 3.下载git源码
- cd /usr/src
+
 sudo wget https://www.kernel.org/pub/software/scm/git/git-2.0.5.tar.gz
  tar xzf git-2.0.5.tar.gz
 
@@ -39,21 +39,14 @@ sudo wget https://www.kernel.org/pub/software/scm/git/git-2.0.5.tar.gz
 则需要切换为root用户然后执行
 （如果root密码输错，则用 sudo passwd root  设置root的秘密）
 
-# sudo source /etc/bashrc
+# source /etc/bashrc
 
 5.检查一下版本号
 # git --version
 
 git version 2.0.5
 ```
-
-三.重新访问139.219.102.213:7990,依然显示git版本过低，需要重新启动bitbucket,然后出现如下的情况。
-![](pic/install-bitbucket/2.PNG)
- 这个过程需要加载一些东西，需要等待一会  
-
-![](pic/install-bitbucket/3.PNG)
-
-四.接下来下载mysql的驱动
+三.接下来下载mysql的驱动
 ```
 sudo wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.45.tar.gz
 tar zxvf mysql-connector-java-5.1.45.tar.gz
@@ -62,6 +55,14 @@ cd mysql-connector-java-5.1.45
 cp mysql-connector-java-5.1.45-bin.jar /home/devopsbba1/atlassian/bitbucket/4.10.1/lib/
 
 ```
+
+四.重新访问139.219.102.213:7990,依然显示git版本过低，需要重新启动bitbucket,然后出现如下的情况。
+![](pic/install-bitbucket/2.PNG)
+ 这个过程需要加载一些东西，需要等待一会  
+
+![](pic/install-bitbucket/3.PNG)
+
+
 五.接下来在mysql上创建bitbucket数据库和账户。
 ```
 mysql -uroot -p
@@ -71,7 +72,7 @@ mysql> GRANT ALL PRIVILEGES ON bitbucket.* TO 'bitbucketuser'@'localhost' IDENTI
 mysql> FLUSH PRIVILEGES;
 mysql> QUIT
 
-特别注意：如果你的bitbucket服务器与mysql的服务器不在同一个，则需要把上面的localhost改为bitbucket所在的ip地址。
+特别注意：如果你的bitbucket服务器与mysql的服务器不在同一个，则需要把上面的localhost改为bitbucket所在的ip地址。还有就是就创建数据库的时候，字符集为utf-8，不然后test不成功
 ```
 重启bitbucket
 ```
