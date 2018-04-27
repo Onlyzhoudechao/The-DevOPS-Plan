@@ -23,6 +23,6 @@
 >步骤二、配置php-fpm，找到php-fpn.conf文件（这要看版本，有些不是配置php-fpm.conf，而是它引用的在/etc/php-fpm.d下的www.conf文件)，更改listen >= 127.0.0.1:9000
 >为 listen = 127.0.0.1:9002   
 >  
->步骤三、这两个配置好后，还有一个问题，就是要(关闭selinux)[CentOS_Tips.md]，不然访问php文件nginx会报错permission denied。  
+>步骤三、这两个配置好后，还有一个问题，就是要[关闭selinux](CentOS_Tips.md)，不然访问php文件nginx会报错permission denied。  
 >  
 >步骤四、重启nginx
