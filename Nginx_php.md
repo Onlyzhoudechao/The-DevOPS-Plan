@@ -3,7 +3,7 @@
 ## 基本方法 ##
 1. 安装php、php-fpm、php-devel  
 2. 配置/etc/nginx下的nginx.conf或者/etc/nginx/config.d/default.conf  
->在配置文件server{ }中添加
+>在配置文件server{ }语句块中添加
 >```
 >    location ~ \.php?.*$ {  
         root           /share/test;  
